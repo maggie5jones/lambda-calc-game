@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdlk88d51e136"]
+
+[ext_resource type="Script" path="res://scenes/game/characters/goals/pergoal.gd" id="1_bpllx"]
+[ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="2_f8wod"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10stn"]
+size = Vector2(55, 50)
+
+[node name="pergoal" type="Area2D" groups=["goal"]]
+position = Vector2(-3, -3)
+script = ExtResource("1_bpllx")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.8125, 3.5)
+texture = ExtResource("2_f8wod")
+centered = false
+region_enabled = true
+region_rect = Rect2(592, 192, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30.5, 28)
+shape = SubResource("RectangleShape2D_10stn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

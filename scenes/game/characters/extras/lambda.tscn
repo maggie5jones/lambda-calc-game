@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://gjd8edx0f0su"]
+
+[ext_resource type="Script" path="res://scenes/game/characters/extras/lambda.gd" id="1_b5pk8"]
+[ext_resource type="Texture2D" uid="uid://bwrvckaw113v5" path="res://assets/lambda.png" id="1_vge6k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r432"]
+size = Vector2(69, 86)
+
+[node name="lambda" type="CharacterBody2D" groups=["lambda"]]
+script = ExtResource("1_b5pk8")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.45, 3.30769)
+texture = ExtResource("1_vge6k")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34.5, 43)
+shape = SubResource("RectangleShape2D_3r432")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(35, 43)
+target_position = Vector2(0, 90)

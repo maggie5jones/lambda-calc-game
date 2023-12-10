@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsqk4mnsdxqwq"]
+
+[ext_resource type="Script" path="res://scenes/game/characters/extras/left_parens.gd" id="1_ycclf"]
+[ext_resource type="Texture2D" uid="uid://1wjsofwiyy4x" path="res://assets/leftparens.png" id="2_cxnr2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2fx1"]
+size = Vector2(23, 78)
+
+[node name="left_parens" type="CharacterBody2D" groups=["parens"]]
+position = Vector2(25, -1)
+script = ExtResource("1_ycclf")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(2.07692, 2.64516)
+texture = ExtResource("2_cxnr2")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, 40)
+shape = SubResource("RectangleShape2D_a2fx1")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(13, 40)
+target_position = Vector2(0, 90)

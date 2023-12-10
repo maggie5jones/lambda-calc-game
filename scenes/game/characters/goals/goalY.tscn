@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://yer87jcvj7a1"]
+
+[ext_resource type="Script" path="res://scenes/game/characters/goals/goalY.gd" id="1_w0esm"]
+[ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="2_rfit1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1jfo"]
+size = Vector2(56, 53)
+
+[node name="goalY" type="Area2D" groups=["goal"]]
+position = Vector2(-4, -4)
+script = ExtResource("1_w0esm")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 3.781)
+texture = ExtResource("2_rfit1")
+centered = false
+region_enabled = true
+region_rect = Rect2(592, 192, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 30.5)
+shape = SubResource("RectangleShape2D_d1jfo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

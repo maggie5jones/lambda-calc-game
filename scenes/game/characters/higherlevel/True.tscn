@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj6xe2s03h57f"]
+
+[ext_resource type="Texture2D" uid="uid://bf281x8q075fu" path="res://assets/highlevelcast.png" id="1_fk8mm"]
+[ext_resource type="Script" path="res://scenes/game/characters/higherlevel/TrueSlime.gd" id="2_7wcbv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4b4kw"]
+size = Vector2(16.875, 11.25)
+
+[node name="True" type="CharacterBody2D" groups=["bool"]]
+scale = Vector2(4, 4)
+script = ExtResource("2_7wcbv")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fk8mm")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 1, 17, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5625, 5.375)
+shape = SubResource("RectangleShape2D_4b4kw")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8.5, 5.5)

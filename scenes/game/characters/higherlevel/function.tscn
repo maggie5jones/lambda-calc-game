@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://d07fo5w2n6k2s"]
+
+[ext_resource type="Texture2D" uid="uid://bf281x8q075fu" path="res://assets/highlevelcast.png" id="1_gncmw"]
+[ext_resource type="Script" path="res://scenes/game/characters/higherlevel/function.gd" id="1_paa1n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqisg"]
+size = Vector2(68, 48)
+
+[node name="function" type="CharacterBody2D" groups=["function"]]
+script = ExtResource("1_paa1n")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 2)
+scale = Vector2(4, 4)
+texture = ExtResource("1_gncmw")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 25, 17, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(35, 24)
+shape = SubResource("RectangleShape2D_jqisg")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(35, 24)
+target_position = Vector2(0, 64)
