@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://drq6bivjnh0ih"]
+
+[ext_resource type="Script" path="res://scenes/game/characters/higherlevel/or-slime.gd" id="1_psv7q"]
+[ext_resource type="Texture2D" uid="uid://c4odv4ovwbg6d" path="res://assets/ops.png" id="2_8041p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvltj"]
+size = Vector2(68, 44)
+
+[node name="or" type="CharacterBody2D" groups=["function"]]
+script = ExtResource("1_psv7q")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_8041p")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 12, 17, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34, 22)
+shape = SubResource("RectangleShape2D_mvltj")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(34, 23)

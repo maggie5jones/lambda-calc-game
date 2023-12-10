@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cctcsynuj77iv"]
+
+[ext_resource type="Texture2D" uid="uid://c4odv4ovwbg6d" path="res://assets/ops.png" id="1_c0oft"]
+[ext_resource type="Script" path="res://scenes/game/characters/higherlevel/and-slime.gd" id="1_jt7ly"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boiey"]
+size = Vector2(72, 44)
+
+[node name="and" type="CharacterBody2D" groups=["function"]]
+script = ExtResource("1_jt7ly")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_c0oft")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 18, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(36, 22)
+shape = SubResource("RectangleShape2D_boiey")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(36, 23)
+target_position = Vector2(0, 64)

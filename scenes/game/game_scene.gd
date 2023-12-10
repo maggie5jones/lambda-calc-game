@@ -15,6 +15,10 @@ var TrueSlime = preload("res://scenes/game/characters/higherlevel/True.tscn")
 var FalseSlime = preload("res://scenes/game/characters/higherlevel/False.tscn")
 var FunctionSlime = preload("res://scenes/game/characters/higherlevel/function.tscn")
 
+var AndSlime = preload("res://scenes/game/characters/higherlevel/and.tscn")
+var OrSlime = preload("res://scenes/game/characters/higherlevel/or.tscn")
+var NotSlime = preload("res://scenes/game/characters/higherlevel/not.tscn")
+
 var VariableX = preload("res://scenes/game/characters/variables/variablex.tscn")
 var VariableY = preload("res://scenes/game/characters/variables/variabley.tscn")
 var VariableZ = preload("res://scenes/game/characters/variables/variablez.tscn")
@@ -110,6 +114,23 @@ func generate_level(level_data: Variant) -> void:
 				$VariableZs.add_child(variablez)
 				variablez.position.x = c_index * 64
 				variablez.position.y = row_index * 64
+			
+
+			if c == "A": #and char
+				var a = AndSlime.instantiate()
+				$Ops.add_child(a)
+				a.position.x = c_index * 64
+				a.position.y = row_index * 64
+			if c == "O": #or char
+				var o = OrSlime.instantiate()
+				$Ops.add_child(o)
+				o.position.x = c_index * 64
+				o.position.y = row_index * 64
+			if c == "N": #not char
+				var n = NotSlime.instantiate()
+				$Ops.add_child(n)
+				n.position.x = c_index * 64
+				n.position.y = row_index * 64
 
 
 			if c == "8": #lambda goal
